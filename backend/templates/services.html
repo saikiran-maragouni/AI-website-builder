@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{hero.title}}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero hero-services">
+        <div class="hero-content">
+            <h1 class="hero-title">{{hero.title}}</h1>
+            <p class="hero-tagline">{{hero.tagline}}</p>
+            <button class="cta-button">{{hero.cta}}</button>
+        </div>
+    </header>
+
+    <!-- Features/Services Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-heading">{{features.heading}}</h2>
+            <div class="features-grid">
+                {{#each features.items}}
+                <div class="feature-card service-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">{{this.title}}</h3>
+                    <p class="feature-description">{{this.description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-heading">{{about.heading}}</h2>
+            <div class="about-content">
+                <p>{{about.content}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Sections -->
+    {{#each sections}}
+    <section class="custom-section">
+        <div class="container">
+            <h2 class="section-heading">{{this.heading}}</h2>
+            <p class="section-content">{{this.content}}</p>
+            {{#if this.items}}
+            <ul class="section-list">
+                {{#each this.items}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+    </section>
+    {{/each}}
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-heading">{{contact.heading}}</h2>
+            <p class="contact-content">{{contact.content}}</p>
+            <div class="contact-info">
+                <p>📞 Schedule a consultation</p>
+                <p>✉️ Contact us</p>
+                <p>🤝 Let's collaborate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 {{hero.title}}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
